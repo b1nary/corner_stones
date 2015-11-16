@@ -2,13 +2,14 @@ require 'corner_stones/form/fields/base'
 require 'corner_stones/form/fields/text_field'
 require 'corner_stones/form/fields/select_field'
 require 'corner_stones/form/fields/file_field'
+require 'corner_stones/form/fields/date_field'
 require 'corner_stones/form/fields/checkbox'
 require 'corner_stones/form/fields/autocomplete_field'
 
 module CornerStones
   class Form
     module FieldSelector
-      FIELDS = [Fields::AutocompleteField, Fields::TextField, Fields::SelectField, Fields::FileField, Fields::Checkbox]
+      FIELDS = [Fields::AutocompleteField, Fields::TextField, Fields::SelectField, Fields::FileField, Fields::DateField, Fields::Checkbox]
 
       def self.find(name, options = {})
         field_class = if options[:autocomplete_fields].include?(name)
